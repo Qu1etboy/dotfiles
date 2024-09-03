@@ -1,5 +1,5 @@
 #!/bin/bash
 
-bash ./brew/install.sh
-bash ./install-deps.sh
-bash ./links.sh
+bash $PWD/brew/install.sh
+bash $PWD/install-deps.sh
+bash $PWD/links.sh

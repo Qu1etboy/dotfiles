@@ -8,6 +8,7 @@ brew install bat
 brew install go
 brew install nvm # node version manager
 brew install maven # java build tool
+brew install openjdk@21
 
 # Docker & Kubernetes
 brew install docker
@@ -22,6 +23,6 @@ brew install --cask visual-studio-code
 brew install --cask postman
 brew install --cask arc
 brew install --cask spotify
-brew install --cack rectangle
+brew install --cask rectangle
 brew install --cask obsidian
 brew install --cask notion

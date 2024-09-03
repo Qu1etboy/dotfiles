@@ -8,3 +8,5 @@ curl -s https://raw.githubusercontent.com/Qu1etboy/dotfiles/main/install-deps.sh
 
 echo "Setting up symlinks..."
 curl -s https://raw.githubusercontent.com/Qu1etboy/dotfiles/main/links.sh | bash
+
+echo "Done! 🚀"

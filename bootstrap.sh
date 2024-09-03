@@ -1,5 +1,10 @@
 #!/bin/bash
 
-bash $PWD/brew/install.sh
-bash $PWD/install-deps.sh
-bash $PWD/links.sh
+echo "Installing Homebrew..."
+curl -s https://raw.githubusercontent.com/Qu1etboy/dotfiles/main/brew/install.sh | bash
+
+echo "Installing dependencies..."
+curl -s https://raw.githubusercontent.com/Qu1etboy/dotfiles/main/install-deps.sh | bash
+
+echo "Setting up symlinks..."
+curl -s https://raw.githubusercontent.com/Qu1etboy/dotfiles/main/links.sh | bash

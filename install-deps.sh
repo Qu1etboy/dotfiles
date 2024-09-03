@@ -17,7 +17,7 @@ brew install minikube
 
 # Apps
 brew install --cask iterm2
-brew install --cask warp
+brew install --cask warp2
 brew install --cask visual-studio-code
 brew install --cask postman
 brew install --cask arc

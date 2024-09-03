@@ -1,10 +1,6 @@
-alias l='exa --icons'
-alias la='exa -a --icons'
-alias ll='exa -la --icons'
-alias ls='exa --color=auto'
-
 alias c='clear'
 alias cat='bat' # use bat instead of cat
+alias ls='eza --icons' # use eza instead of ls
 
 # git alias
 alias g='git'

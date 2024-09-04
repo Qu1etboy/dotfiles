@@ -27,6 +27,7 @@ brew install --cask iterm2
 brew install --cask warp
 brew install --cask visual-studio-code
 brew install --cask intellij-idea
+brew install --cask datagrip
 brew install --cask postman
 brew install --cask arc
 brew install --cask spotify

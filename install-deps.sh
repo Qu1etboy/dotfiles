@@ -5,11 +5,16 @@ brew install starship
 brew install bat
 brew install eza
 
+# zsh
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
+
 # Programming Languages
 brew install go
 brew install nvm # node version manager
 brew install maven # java build tool
 brew install openjdk@21
+brew install openjdk@22
 
 # Docker & Kubernetes
 brew install docker

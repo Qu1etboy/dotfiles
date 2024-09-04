@@ -7,8 +7,7 @@ alias s='source ~/.zshrc'
 
 eval "$(starship init zsh)"
 
-# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home -v 21`
 
 export PATH="/Users/qu1etboy/Library/Python/3.9/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin

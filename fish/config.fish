@@ -8,4 +8,6 @@ source ~/dotfiles/.aliases
 
 alias s='source ~/.config/fish/config.fish'
 
+set -g -x JAVA_HOME (/usr/libexec/java_home -v 21)
+
 starship init fish | source

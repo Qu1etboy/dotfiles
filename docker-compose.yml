@@ -1,17 +1,30 @@
 version: "3.9"
 services:
-  mysql8:
+  mysql5.7:
+    platform: linux/x86_64
     image: mysql:5.7
     container_name: mysql5.7
     restart: always
     environment:
-      ALLOW_EMPTY_PASSWORD: true
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
       MYSQL_USER: test
       MYSQL_PASSWORD: test
     ports:
       - "3306:3306"
     volumes:
-      - mysql-data:/var/lib/mysql
+      - mysql5.7-data:/var/lib/mysql
+  mysql8:
+    image: mysql:8.0
+    container_name: mysql8
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql8-data:/var/lib/mysql
   postgres13:
     image: postgres:13
     container_name: postgres13
@@ -62,5 +75,6 @@ services:
       - postgres13
 
 volumes:
-  mysql-data:
+  mysql5.7-data:
+  mysql8-data:
   postgres-data:

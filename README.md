@@ -20,10 +20,24 @@ cd ~/.dotfiles
 
 ## Setup Git
 
-1. Copy `template.gitconfig` and rename to `work.gitconfig` to setup your work git configuration
+1. Copy `template.gitconfig` and rename to `work.gitconfig` to setup your work git configuration and modify the file to your needs
 
 ```sh
 cp ~/.dotfiles/template.gitconfig ~/.dotfiles/work.gitconfig
+```
+
+## Setup Basic Tools
+
+1. Run `docker-compose.yml` to start all basic development tools
+
+```sh
+docker-compose up -d
+```
+
+Or start individual services
+
+```sh
+docker-compose up -d <service-name>
 ```
 
 ## Scripts

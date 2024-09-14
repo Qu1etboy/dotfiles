@@ -3,5 +3,14 @@
   name = Qu1etboy
   email = 95042765+Qu1etboy@users.noreply.github.com
 
+[core]
+  hooksPath = ~/.githooks
+
+[push]
+	autoSetupRemote = true
+
+[pull]
+	rebase = true
+
 [includeif "gitdir/i:~/documents/dev/work/"]
   path = ~/dotfiles/git/work.gitconfig

@@ -12,4 +12,9 @@ function java-use
     set -g -x JAVA_HOME (/usr/libexec/java_home -v $argv[1])
 end
 
+function take
+    mkdir -p $argv[1]
+    cd $argv[1]
+end
+
 starship init fish | source

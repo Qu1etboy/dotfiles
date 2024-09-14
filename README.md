@@ -18,6 +18,14 @@ cd ~/.dotfiles
 ./links.sh
 ```
 
+## Setup Git
+
+1. Copy `template.gitconfig` and rename to `work.gitconfig` to setup your work git configuration
+
+```sh
+cp ~/.dotfiles/template.gitconfig ~/.dotfiles/work.gitconfig
+```
+
 ## Scripts
 
 - `bootstrap.sh` - Install the necessary tools and apps

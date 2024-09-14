@@ -1,0 +1,7 @@
+# Default user
+[user]
+  name = Qu1etboy
+  email = 95042765+Qu1etboy@users.noreply.github.com
+
+[includeif "gitdir/i:~/documents/dev/work/"]
+  path = ~/dotfiles/git/work.gitconfig

@@ -1,256 +1,93 @@
+command_timeout = 2000
+
+format = "[╭╴](#64748b bold)$os$username$directory$git_branch$git_status$python$java$nodejs$golang\n$character"
+
 [character]
-success_symbol = "[\\$](bold green)"
-error_symbol = "[x](bold red)"
-vimcmd_symbol = "[<](bold green)"
+success_symbol = "[╰⎯](#64748b bold)"
+error_symbol = "[╰⎯](#64748b bold)"
+# ╭╴ ╰─
 
-[battery]
-full_symbol = "• "
-charging_symbol = "⇡ "
-discharging_symbol = "⇣ "
-unknown_symbol = "❓ "
-empty_symbol = "❗ "
+[os]
+format = '[$symbol](bold white) '   
+disabled = false
 
-[erlang]
-symbol = "ⓔ "
+[os.symbols]
+Windows = ' '
+Arch = '󰣇'
+Ubuntu = ''
+Macos = '󰀵'
+Unknown = '󰠥'
+
+# Shows the username
+[username]
+style_user = 'yellow bold'
+style_root = 'black bold'
+format = '[$user](#2883ff) ' # 2883ff
+disabled = false
+show_always = true
+
+# Shows the hostname
+[hostname]
+ssh_only = false
+format = '(black bold) [$hostname](bold blue) '
+disabled = false
+
+# Shows current directory
+[directory]
+truncation_length = 3
+# truncation_symbol = '…/'
+home_symbol = '~'
+# read_only_style = '197'
+read_only = '  '
+format = 'at (black bold)[$path]($style)[$read_only]($read_only_style) '
+style = '#7ed1fb' # yellow bold
+
+# Shows current git branch
+[git_branch]
+# symbol = ' '
+symbol = ' '
+format = 'on (black bold)[$symbol\[$branch\]]($style)'
+# truncation_length = 0
+# truncation_symbol = '…/'
+style = 'bold green'
+
+# Shows current git status
+[git_status]
+format = '[($all_status$ahead_behind )]($style)'
+style = 'bold green'
+# disabled = true
+# conflicted = '🏳'
+# up_to_date = ''
+# untracked = ' '
+# ahead = '⇡${count}'
+# diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+# behind = '⇣${count}'
+# stashed = ' '
+# modified = ' '
+# staged = '[++\($count\)](green)'
+# renamed = '襁 '
+# deleted = ' '
+
+# Shows kubernetes context and namespace
+# [kubernetes]
+# format = 'via [󱃾 $context\($namespace\)](bold purple) '
+# disabled = false
+
+[python]
+symbol = '󰌠'
+python_binary = ['./venv/bin/python', 'python', 'python3', 'python2']
+format = '[//](#64748b bold) [${symbol} ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
+
+[java]
+symbol = " "
+format = "[//](#64748b bold) [$symbol$version](bold red) "
 
 [nodejs]
-symbol = "[⬢](bold green) "
+symbol = ""
+format = "[//](#64748b bold) [$symbol $version](bold green) "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
 
-[pulumi]
-symbol = "🧊 "
-
-# format = """
-# [░▒▓](#a3aed2)\
-# [  ](bg:#a3aed2 fg:#090c0c)\
-# [](bg:#769ff0 fg:#a3aed2)\
-# $directory\
-# [](fg:#769ff0 bg:#394260)\
-# $git_branch\
-# $git_status\
-# [](fg:#394260)\
-# $fill\
-# [](fg:#1d2230)\
-# $nodejs\
-# $rust\
-# $golang\
-# $php\
-# [](fg:#212736 bg:#1d2230)\
-# $time\
-# [ ](fg:#1d2230)\
-# \n$character"""
-
-# [fill]
-# symbol = " "
-
-# [directory]
-# style = "fg:#e3e5e5 bg:#769ff0"
-# format = "[ $path ]($style)"
-# truncation_length = 3
-# truncation_symbol = "…/"
-
-# [directory.substitutions]
-# "Documents" = "󰈙 "
-# "Downloads" = " "
-# "Music" = " "
-# "Pictures" = " "
-
-# [git_branch]
-# symbol = ""
-# style = "bg:#394260"
-# format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
-
-# [git_status]
-# style = "bg:#394260"
-# format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
-
-# [nodejs]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-# [rust]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-# [golang]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-# [php]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-# [time]
-# disabled = false
-# time_format = "%R" # Hour:Minute Format
-# style = "bg:#1d2230"
-# format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
-
-
-# format = """
-# $username\
-# $hostname\
-# $directory\
-# $git_branch\
-# $git_status\
-# $fill\
-# $cmd_duration\
-# $time\
-# $line_break\
-# $character\
-
-# """
-
-# # $nodejs\
-# # $python\
-# # $docker_context\
-# # $terraform\
-# # $golang\
-# # $package\
-# # $rust\
-# # $dart\
-# # $elixir\
-# # $elm\
-# # $java\
-# # $julia\
-# # $nim\
-# # $nix_shell\
-# # $perl\
-# # $php\
-# # $ruby\
-# # $scala\
-# # $swift\
-# # $aws\
-
-# [fill]
-# symbol = " "
-
-# [username]
-# style_user = "yellow bold"
-# style_root = "red bold"
-# format = "🐱[$user]($style) "
-# disabled = false
-# show_always = true
-
-# [hostname]
-# ssh_only = true
-# format = 'on [$hostname](bold blue) '
-# trim_at = "."
-# disabled = false
-
-# # Replace the "❯" symbol in the prompt with "➜"
-# [character]                            # The name of the module we are configuring is "character"
-# success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-# error_symbol = "[✗](bold red)"
-# #  
-# # configure directory
-# [directory]
-# read_only = " "
-# truncation_length = 10
-# truncate_to_repo = true # truncates directory to root folder if in github repo
-# style = "bold italic green"
-
-# [cmd_duration]
-# min_time = 4
-# show_milliseconds = false
-# disabled = false
-# style = "italic yellow"
-# format = "[$duration]($style) "
-
-# [time]
-# disabled = false
-# format = "[$time]($style) "
-# style = "italic #6b7280"
-
-# [aws]
-# symbol = "  "
-
-# [conda]
-# symbol = " "
-
-# [dart]
-# symbol = " "
-
-# #[directory]
-# #read_only = " "
-
-# [docker_context]
-# symbol = " "
-# format = "via [$symbol$context]($style) "
-# style = "blue bold"
-# only_with_files = true
-# detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
-# detect_folders = []
-# disabled = false
-
-# [elixir]
-# symbol = " "
-
-# [elm]
-# symbol = " "
-
-# [git_branch]
-# symbol = " "
-
-# [golang]
-# symbol = " "
-
-# [hg_branch]
-# symbol = " "
-
-# [java]
-# symbol = " "
-
-# [julia]
-# symbol = " "
-
-# [memory_usage]
-# symbol = " "
-
-# [nim]
-# symbol = " "
-
-# [nix_shell]
-# symbol = " "
-
-# [package]
-# symbol = " "
-
-# [perl]
-# symbol = " "
-
-# [php]
-# symbol = " "
-
-# [python]
-# symbol = " "
-# #pyenv_version_name = true
-# format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
-# style = "bold yellow"
-# pyenv_prefix = "venv "
-# python_binary = ["./venv/bin/python", "python", "python3", "python2"]
-# detect_extensions = ["py"]
-# version_format = "v${raw}"
-
-# [ruby]
-# symbol = " "
-
-# [rust]
-# symbol = " "
-
-# [scala]
-# symbol = " "
-
-# [shlvl]
-# symbol = " "
-
-# [swift]
-# symbol = "ﯣ "
-
-# [nodejs]
-# format = "via [ Node.js $version](bold green) "
-# detect_files = ["package.json", ".node-version"]
-# detect_folders = ["node_modules"]
+[golang]
+symbol = " "
+format = "[//](#64748b bold) [$symbol$version](bold blue) "

@@ -5,6 +5,7 @@
 
 [core]
   hooksPath = ~/.githooks
+  excludesfile = ~/dotfiles/git/gitignore
 
 [push]
 	autoSetupRemote = true

@@ -17,4 +17,5 @@ function take
     cd $argv[1]
 end
 
+fzf --fish | source
 starship init fish | source

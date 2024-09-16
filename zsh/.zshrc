@@ -5,6 +5,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 alias s='source ~/.zshrc'
 
+source <(fzf --zsh)
 eval "$(starship init zsh)"
 
 function java-use {

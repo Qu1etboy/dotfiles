@@ -4,6 +4,7 @@ brew install fish
 brew install starship
 brew install bat
 brew install eza
+brew install fzf
 
 # zsh
 brew install zsh-autosuggestions

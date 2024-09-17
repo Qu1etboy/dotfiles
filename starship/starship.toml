@@ -39,7 +39,7 @@ truncation_length = 3
 home_symbol = '~'
 # read_only_style = '197'
 read_only = '  '
-format = 'at (black bold)[$path]($style)[$read_only]($read_only_style) '
+format = 'at (black bold)[ $path]($style)[$read_only]($read_only_style) '
 style = '#7ed1fb' # yellow bold
 
 # Shows current git branch

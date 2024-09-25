@@ -13,6 +13,23 @@
 [pull]
 	rebase = true
 
+[alias]
+  # List aliases.
+	aliases = config --get-regexp alias
+  
+  # Pull in remote changes for the current repository and all its submodules.
+  p = pull --recurse-submodules
+
+  # Switch to a branch, creating it if necessary.
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+  # Remove branches that have already been merged with main.
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+  # Show the user email for the current repository.
+	whoami = config user.email
+
 [color]
   diff = auto
   branch = auto
@@ -24,6 +41,13 @@
   added = green
   changed = yellow bold
   untracked = red bold
+
+[help]
+  # Automatically correct and execute mistyped commands.
+  autocorrect = 1
+
+[init]
+	defaultBranch = main
 
 [includeif "gitdir/i:~/documents/dev/work/"]
   path = ~/dotfiles/git/work.gitconfig

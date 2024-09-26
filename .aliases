@@ -1,3 +1,5 @@
+alias dev="cd ~/Documents/dev"
+
 alias c='clear'
 alias cat='bat' # use bat instead of cat
 alias ls='eza --icons' # use eza instead of ls
@@ -24,3 +26,6 @@ alias d='docker'
 alias dc='docker-compose'
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
+# Print each PATH entry on a separate line
+alias path="echo -e $PATH | tr : '\n'"

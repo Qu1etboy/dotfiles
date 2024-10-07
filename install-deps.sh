@@ -12,7 +12,7 @@ brew install zsh-syntax-highlighting
 
 # Programming Languages
 brew install go
-brew install nvm # node version manager
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash # nvm
 brew install maven # java build tool
 brew install openjdk@21
 brew install openjdk@22

@@ -22,7 +22,7 @@ Unknown = '󰠥'
 [username]
 style_user = 'yellow bold'
 style_root = 'black bold'
-format = '[$user](#2883ff) ' # 2883ff
+format = '[$user](#f97316) '
 disabled = false
 show_always = true
 
@@ -40,7 +40,7 @@ home_symbol = '~'
 # read_only_style = '197'
 read_only = '  '
 format = 'at (black bold)[ $path]($style)[$read_only]($read_only_style) '
-style = '#7ed1fb' # yellow bold
+style = '#fb923c' # yellow bold
 
 # Shows current git branch
 [git_branch]
@@ -49,7 +49,7 @@ symbol = ' '
 format = 'on (black bold)[$symbol\[$branch\]]($style)'
 # truncation_length = 0
 # truncation_symbol = '…/'
-style = 'bold green'
+style = 'bold #84cc16'
 
 # Shows current git status
 [git_status]

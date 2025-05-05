@@ -1,0 +1,10 @@
+font-size = 16
+
+background = 09090b
+background-opacity = 0.85
+background-blur = true
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+
+macos-icon = glass

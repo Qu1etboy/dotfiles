@@ -37,3 +37,4 @@ brew install --cask obsidian
 brew install --cask notion
 brew install --cask raycast
 brew install --cask hiddenbar
+brew install --cask ghostty

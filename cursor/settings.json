@@ -1,0 +1,24 @@
+{
+	"window.commandCenter": true,
+	"files.autoSave": "onFocusChange",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"workbench.iconTheme": "material-icon-theme",
+	// "prettier.configPath": "~/.prettierrc",
+	"editor.fontFamily": "JetBrainsMono Nerd Font, JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+	"editor.fontSize": 14,
+	"go.goroot": "/opt/homebrew/Cellar/go/1.24.3/libexec",
+	"editor.formatOnSave": true,
+	"workbench.colorTheme": "Vesper",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	}
+}

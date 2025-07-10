@@ -8,5 +8,6 @@ ln -sfn ~/dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
 ln -sfn ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -sfn ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -sfn ~/dotfiles/ghostty/config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
+ln -sfn ~/dotfiles/cursor/settings.json $HOME/Library/Application\ Support/Cursor/User/settings.json
 
 echo "🟠 Finish Symlink Files..."

@@ -46,3 +46,9 @@ docker-compose up -d <service-name>
   - `brew/install.sh` - Install Homebrew
   - `install-deps.sh` - Install the necessary dependencies using brew
 - `links.sh` - Symlink the dotfiles into the right place on your machine
+
+Dump dependencies to `Brewfile`
+
+```sh
+brew bundle dump --describe --force
+```

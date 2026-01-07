@@ -9,5 +9,6 @@ ln -sfn ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -sfn ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -sfn ~/dotfiles/ghostty/config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
 ln -sfn ~/dotfiles/cursor/settings.json $HOME/Library/Application\ Support/Cursor/User/settings.json
+ln -sfn ~/dotfiles/mise.toml ~/.config/mise/config.toml
 
 echo "🟠 Finish Symlink Files..."

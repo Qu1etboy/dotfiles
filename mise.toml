@@ -1,0 +1,26 @@
+[tools]
+# Use 'latest' for tools you always want the newest version of
+go = "latest"
+bun = "latest"
+maven = "latest"
+
+# Use specific versions or 'lts' for stability
+node = "lts"
+
+# You can list multiple versions of Java
+# Mise will use the first one as default, but keep others available
+java = ["openjdk-21", "openjdk-17"]
+
+[settings]
+# This is a MUST for Java devs: 
+# It automatically exports JAVA_HOME so Maven/Gradle work perfectly
+asdf_compat = true 
+jobs = 4
+raw = false
+not_found_auto_install = true
+
+[env]
+# Global environment variables you want everywhere
+# (Only put non-sensitive stuff here!)
+EDITOR = "code --wait"
+GOPATH = "{{env.HOME}}/go"

@@ -1,6 +1,6 @@
 [tools]
 # Use 'latest' for tools you always want the newest version of
-go = "latest"
+go = "1.25.5"
 bun = "latest"
 maven = "latest"
 
@@ -22,5 +22,4 @@ not_found_auto_install = true
 [env]
 # Global environment variables you want everywhere
 # (Only put non-sensitive stuff here!)
-EDITOR = "code --wait"
 GOPATH = "{{env.HOME}}/go"

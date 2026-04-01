@@ -14,11 +14,6 @@ eval "$(starship init zsh)"
 # Chore Functions
 ########################################################
 
-# set the java home to the specified version
-function java-use {
-  export JAVA_HOME=`/usr/libexec/java_home -v $1`
-}
-
 # create a new directory and cd into it
 function take {
   mkdir -p $1

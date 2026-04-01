@@ -1,24 +1,57 @@
 {
-	"window.commandCenter": true,
-	"files.autoSave": "onFocusChange",
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[go]": {
-		"editor.defaultFormatter": "golang.go"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"workbench.iconTheme": "material-icon-theme",
-	// "prettier.configPath": "~/.prettierrc",
+	"window.commandCenter": false,
+	"window.nativeTabs": true,
+	"workbench.layoutControl.enabled": false, // remove layout button on the left side of title bar
+	// -- editor --
 	"editor.fontFamily": "JetBrainsMono Nerd Font, JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontSize": 14,
-	"go.goroot": "/opt/homebrew/Cellar/go/1.24.3/libexec",
-	"editor.formatOnSave": true,
-	"workbench.colorTheme": "Vesper",
+	// -- files --
+	"files.autoSave": "onFocusChange",
+	"files.insertFinalNewline": true,
+	// -- language --
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		// "prettier.configPath": "~/.prettierrc"
+	},
+	"[javascript][typescript][javascriptreact][typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit",
+		},
+		"editor.tabSize": 2,
+	},
+	"[go]": {
+		"editor.defaultFormatter": "golang.go",
+		// "go.goroot": "/opt/homebrew/Cellar/go/1.24.3/libexec",
+	},
+	"[yaml]": {
+		"editor.formatOnSave": false,
+		// "editor.defaultFormatter": "esbenp.prettier-vscode",
+		// "prettier.singleQuote": false,
+		// "prettier.tabWidth": 2,
+		// "prettier.configPath": "~/.prettierrc",
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode",
+	},
+	"[markdown]": {
+		"editor.formatOnSave": false,
+	},
+	// -- IDE --
+	"workbench.iconTheme": "material-icon-theme",
+
 	"diffEditor.ignoreTrimWhitespace": false,
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit"
-	}
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[dockercompose]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.defaultFormatter": "redhat.vscode-yaml",
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml",
+	},
+	"editor.formatOnSave": true,
+	"claudeCode.preferredLocation": "panel",
+	"workbench.colorTheme": "Cursor Dark",
 }

@@ -1,53 +1,51 @@
-
 ########################################################
-# Environment Variables
+# 1. MISE CORE (Load this first)
 ########################################################
-
-export PATH="/Users/qu1etboy/Library/Python/3.9/bin:$PATH"
-export PATH=$PATH:$(go env GOPATH)/bin
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export BUN_INSTALL="$HOME/.bun"
-
-[[ -s "/Users/qu1etboy/.gvm/scripts/gvm" ]] && source "/Users/qu1etboy/.gvm/scripts/gvm"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/fastwork/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/fastwork/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/fastwork/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/fastwork/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# This replaces nvm, gvm, and manual Java/Flutter pathing
 eval "$(~/.local/bin/mise activate zsh)"
 
-# bun completions
-[ -s "/Users/fastwork/.bun/_bun" ] && source "/Users/fastwork/.bun/_bun"
+########################################################
+# 2. PATH CONFIGURATION (The Zsh Way)
+########################################################
+# Using the lowercase 'path' array automatically updates the uppercase $PATH.
+# Zsh handles duplicates and ordering much more cleanly this way.
+path=(
+  "$HOME/.local/bin"
+  "$HOME/.bun/bin"
+  "$HOME/Library/Android/sdk/platform-tools"
+  "$HOME/Library/Android/sdk/tools"
+  "$HOME/Library/Android/sdk/tools/bin"
+  "$HOME/Library/Android/sdk/emulator"
+  "/Applications/Android Studio.app/Contents/MacOS"
+  "$HOME/.pub-cache/bin"
+  $path # Keep existing paths
+)
+export PATH
 
-# bun
+########################################################
+# 3. ENVIRONMENT VARIABLES
+########################################################
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
-[[ -s "/Users/fastwork/.gvm/scripts/gvm" ]] && source "/Users/fastwork/.gvm/scripts/gvm"
+# Terminal default
+export EDITOR="vim"
 
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/fastwork/.dart-cli-completion/zsh-config.zsh ]] && . /Users/fastwork/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
+# Note: We removed hardcoded JAVA_HOME. 
+# Mise sets JAVA_HOME automatically when you run 'mise use java@17'
 
-export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+########################################################
+# 4. EXTERNAL TOOLS & COMPLETIONS
+########################################################
 
-# set android studio path
-# Android Path
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/emulator
+# Google Cloud SDK
+if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"
+  source "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"
+fi
 
-export PATH="/Applications/Android Studio.app/Contents/MacOS:$PATH"
+# Bun Completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-#set flutter and dart path
-export PATH=$PATH:~/fvm/default/bin
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+# Dart CLI Completion
+[[ -f "$HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$HOME/.dart-cli-completion/zsh-config.zsh"

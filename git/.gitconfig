@@ -13,6 +13,11 @@
 [pull]
 	rebase = true
 
+[rerere]
+  # Automatically resolve conflicts you've already fixed before
+  enabled = true
+  autoupdate = true
+
 [alias]
   # List aliases.
 	aliases = config --get-regexp alias

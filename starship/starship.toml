@@ -1,6 +1,7 @@
 command_timeout = 2000
 
-format = "[╭╴](#64748b bold)$os$username$directory$git_branch$git_status$python$java$nodejs$golang\n$character"
+format = "[╭╴](#64748b bold)$directory$git_branch$git_status$python$java$nodejs$golang$kubernetes$fill$time\n$character"
+# right_format = "$time"
 
 [character]
 success_symbol = "[╰⎯](#64748b bold)"
@@ -39,8 +40,9 @@ truncation_length = 3
 home_symbol = '~'
 # read_only_style = '197'
 read_only = '  '
-format = 'at (black bold)[ $path]($style)[$read_only]($read_only_style) '
-style = '#fb923c' # yellow bold
+format = '(black bold)[ $path]($style)[$read_only]($read_only_style) '
+style = '#fb923c' # orange
+# style = '#22d3ee' # cyan
 
 # Shows current git branch
 [git_branch]
@@ -69,9 +71,19 @@ style = 'bold green'
 # deleted = ' '
 
 # Shows kubernetes context and namespace
-# [kubernetes]
-# format = 'via [󱃾 $context\($namespace\)](bold purple) '
-# disabled = false
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
+disabled = false
+
+[time]
+disabled = false
+time_format = "%v %T" # Hour:Minute Format
+format = '[🕙 $time ]($style)'
+style = '#94a3b8'
+
+[fill]
+symbol = ' '
+style = 'bold green'
 
 [python]
 symbol = '󰌠'

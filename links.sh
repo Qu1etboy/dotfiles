@@ -11,4 +11,10 @@ ln -sfn ~/dotfiles/ghostty/config $HOME/Library/Application\ Support/com.mitchel
 ln -sfn ~/dotfiles/cursor/settings.json $HOME/Library/Application\ Support/Cursor/User/settings.json
 ln -sfn ~/dotfiles/mise.toml ~/.config/mise/config.toml
 
+# Claude Code (Eli)
+mkdir -p ~/.claude ~/.claude/skills
+ln -sfn ~/dotfiles/claude/settings.json ~/.claude/settings.json
+ln -sfn ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sfn ~/dotfiles/claude/skills/ship ~/.claude/skills/ship
+
 echo "🟠 Finish Symlink Files..."

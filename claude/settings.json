@@ -1,0 +1,82 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(eza:*)",
+      "Bash(cat:*)",
+      "Bash(bat:*)",
+      "Bash(rg:*)",
+      "Bash(grep:*)",
+      "Bash(fd:*)",
+      "Bash(find:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(tree:*)",
+      "Bash(pwd)",
+      "Bash(which:*)",
+      "Bash(file:*)",
+      "Bash(stat:*)",
+      "Bash(echo:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git fetch:*)",
+      "Bash(git remote:*)",
+      "Bash(git stash list:*)",
+      "Bash(go build:*)",
+      "Bash(go test:*)",
+      "Bash(go run:*)",
+      "Bash(go vet:*)",
+      "Bash(go fmt:*)",
+      "Bash(gofmt:*)",
+      "Bash(mix compile:*)",
+      "Bash(mix test:*)",
+      "Bash(mix format:*)",
+      "Bash(mix deps.get:*)"
+    ],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git push --force-with-lease:*)",
+      "Bash(kubectl delete:*)",
+      "Bash(docker system prune:*)"
+    ],
+    "deny": []
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "$HOME/dotfiles/claude/hooks/statusline.sh",
+    "refreshInterval": 2
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/format.sh" }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh needs" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh done" }
+        ]
+      }
+    ]
+  }
+}

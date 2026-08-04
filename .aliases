@@ -28,3 +28,6 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 # Print each PATH entry on a separate line
 alias path="echo -e $PATH | tr : '\n'"
+
+# Eli notifications (Claude Code) — single toggle (also used by the Apple Shortcut)
+alias eli-toggle='~/dotfiles/claude/hooks/eli-toggle.sh'

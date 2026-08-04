@@ -56,6 +56,14 @@
     "refreshInterval": 2
   },
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh needs" }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Edit|Write",
@@ -66,6 +74,19 @@
     ],
     "Notification": [
       {
+        "matcher": "permission_prompt",
+        "hooks": [
+          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh permission" }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh needs" }
+        ]
+      },
+      {
+        "matcher": "elicitation_dialog",
         "hooks": [
           { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh needs" }
         ]

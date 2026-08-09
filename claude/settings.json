@@ -1,4 +1,5 @@
 {
+  "outputStyle": "eli",
   "permissions": {
     "defaultMode": "default",
     "allow": [

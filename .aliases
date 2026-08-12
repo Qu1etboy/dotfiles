@@ -2,7 +2,7 @@ alias dev="cd ~/Documents/dev"
 
 alias c='clear'
 alias cat='bat' # use bat instead of cat
-alias ls='eza --icons' # use eza instead of ls
+# ls -> eza lives in zsh/.zshrc (needs a TTY check, see Chore Functions)
 
 # git alias
 alias g='git'

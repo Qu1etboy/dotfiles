@@ -19,3 +19,14 @@ function take {
   mkdir -p $1
   cd $1
 }
+
+# use eza for ls, but real ls when output is captured
+# (eza prints nothing given no path argument when stdout is not a TTY)
+function ls {
+  if [[ -t 1 ]]; then
+    eza --icons "$@"
+  else
+    command ls "$@"
+  fi
+}
+

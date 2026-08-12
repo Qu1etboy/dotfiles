@@ -1,7 +1,5 @@
 {
-  "outputStyle": "eli",
   "permissions": {
-    "defaultMode": "default",
     "allow": [
       "Bash(ls:*)",
       "Bash(eza:*)",
@@ -39,6 +37,7 @@
       "Bash(mix format:*)",
       "Bash(mix deps.get:*)"
     ],
+    "deny": [],
     "ask": [
       "Bash(rm:*)",
       "Bash(git reset --hard:*)",
@@ -49,24 +48,28 @@
       "Bash(kubectl delete:*)",
       "Bash(docker system prune:*)"
     ],
-    "deny": []
+    "defaultMode": "default"
   },
-  "statusLine": {
-    "type": "command",
-    "command": "$HOME/dotfiles/claude/hooks/statusline.sh",
-    "refreshInterval": 2
-  },
+  "model": "claude-opus-4-8",
   "hooks": {
     "UserPromptSubmit": [
       {
-        "hooks": [{ "type": "command", "command": "$HOME/dotfiles/claude/hooks/timestamp.sh" }]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/claude/hooks/timestamp.sh"
+          }
+        ]
       }
     ],
     "PreToolUse": [
       {
         "matcher": "AskUserQuestion",
         "hooks": [
-          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh needs" }
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/claude/hooks/notify.sh needs"
+          }
         ]
       }
     ],
@@ -74,7 +77,10 @@
       {
         "matcher": "Edit|Write",
         "hooks": [
-          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/format.sh" }
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/claude/hooks/format.sh"
+          }
         ]
       }
     ],
@@ -82,28 +88,48 @@
       {
         "matcher": "permission_prompt",
         "hooks": [
-          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh permission" }
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/claude/hooks/notify.sh permission"
+          }
         ]
       },
       {
         "matcher": "idle_prompt",
         "hooks": [
-          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh needs" }
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/claude/hooks/notify.sh needs"
+          }
         ]
       },
       {
         "matcher": "elicitation_dialog",
         "hooks": [
-          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh needs" }
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/claude/hooks/notify.sh needs"
+          }
         ]
       }
     ],
     "Stop": [
       {
         "hooks": [
-          { "type": "command", "command": "$HOME/dotfiles/claude/hooks/notify.sh done" }
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/claude/hooks/notify.sh done"
+          }
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "$HOME/dotfiles/claude/hooks/statusline.sh",
+    "refreshInterval": 2
+  },
+  "outputStyle": "eli",
+  "tui": "fullscreen",
+  "theme": "custom:eli"
 }

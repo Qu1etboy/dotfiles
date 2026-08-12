@@ -1,0 +1,8 @@
+{
+  "name": "Eli",
+  "base": "dark",
+  "overrides": {
+    "userMessageBackground": "#1e2d4a",
+    "userMessageBackgroundHover": "#243558"
+  }
+}

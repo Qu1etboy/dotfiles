@@ -23,4 +23,4 @@ When I use any of these phrases, invoke the `garden` skill without asking for co
 - "write an RFC" / "draft an RFC"
 - "write an ADR" / "record this decision"
 
-Pass the doc type and title hint as arguments. If the type is clear from the trigger, don't ask — infer and proceed. Write directly to ~/garden/docs/ and confirm with path + one-liner only.
+Pass the doc type and title hint as arguments. If the type is clear from the trigger, don't ask — infer and proceed. The skill captures through the garden MCP (`mcp__garden__capture_note`); confirm with the returned path + one-liner only.
